@@ -18,7 +18,7 @@ In comes the world of productivity; A mention in one of the podcasts of ADHD men
 I eventually landed on a talk about David Allen - The creator of GTD - It seemed to be so much more than a bunch of "productivity hacks".
 
 
-##What is GTD?
+## What is GTD?
 
 GTD is a way to organize your todo-list(s), calendar, projects, notes, ideas and dreams in a way that gives you a great perspective over what you have to do and when.
 And the way you can handle multiple projects with it is according to me an awesome fit for IT.
