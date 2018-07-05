@@ -24,6 +24,7 @@ GTD is a way to organize your todo-list(s), calendar, projects, notes, ideas and
 And the way you can handle multiple projects with it is according to me an awesome fit for IT.
 
 If you want to learn more about GTD and it's awesome powers:
+
 *[Read this summary on lifehacker](http://lifehacker.com/productivity-101-a-primer-to-the-getting-things-done-1551880955)
 *[Watch this awesome speak at TEDx from David Allen himself](https://www.youtube.com/watch?v=CHxhjDPKfbY)
 *[Buy the book - Getting things done: The art of stress free productivity](https://www.amazon.com/Getting-Things-Done-Stress-Free-Productivity/dp/0142000280)
