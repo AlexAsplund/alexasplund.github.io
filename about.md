@@ -8,4 +8,4 @@ permalink: /about/
 
 ### Contact me
 
-[email@domain.com](mailto:alex@automativity.com)
+Twitter: alexasplund

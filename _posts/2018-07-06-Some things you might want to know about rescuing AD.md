@@ -1,3 +1,8 @@
+---
+layout: post
+title: Some of my notes when it comes to Disaster Recovery of Active directory and security
+---
+Some of my notes when it comes to Disaster Recovery of Active directory and security
 A while back we had a couple of session with microsoft, one of those focused on DR of Active Directory and another one was on AD health. Here are some of my notes and things learned. Some of them are obvious but might need a reminder and other ones might not be well known:
 
 ### The computers remembers the password last two passwords
