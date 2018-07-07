@@ -36,7 +36,7 @@ But a mass deletion in AD is severe enough. Doublecheck that you have the recycl
 
 
 ### Use the microsoft tiering model for securing important infrastructure
-Read more about it here: https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material
+Read more about it [here](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)
 
 This will hopefully make it so that you don't have to rebuild the entire environment in case of a security breach.
 
@@ -56,7 +56,7 @@ Create a recurring meeting, one or two days a year for practicing to force yours
 After practicing this the first time and documenting a routine, the worries AD breaking down is minimal. And the big black hole of worry when it comes to this shrinks.
 
 ### AD is stable, and most DR scenarios isn't because of a failiure of AD
-Most DR scenarios is because of a security breach. I yet again refer to: https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material
+Most DR scenarios is because of a security breach. I yet again refer to: [this](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)
 
 ### The DC that you recover to SHOULD be able to handle most of the load for a period of time
 When recovering AD, at some time, only one DC will be available. And all machines will try to go towards it. When creating or buying a spare machine that AD will be restored to - add a lot of CPU.
@@ -134,19 +134,18 @@ Scan your DNS records, either manually or with a script after leftover records f
 This occurs once every 12h. even tho it works before that.
 
 ### If you're going to monitor one thing, monitor for JET database errors on the domaincontrollers
-This is a sign of corruption in the AD database. Here's the event ID's: https://support.microsoft.com/en-in/help/4042791/jet-database-errors-and-recovery-steps
+This is a sign of corruption in the AD database. [Here's the event ID's.](https://support.microsoft.com/en-in/help/4042791/jet-database-errors-and-recovery-steps)
 
 ### Monitor DFS-R for SYSVOL and Netlogon replication errors
-A restore of those can be quite annoying, but not to hard:
-https://support.microsoft.com/en-us/help/2958414/dfs-replication-how-to-troubleshoot-missing-sysvol-and-netlogon-shares
+A restore of those can be quite annoying, but not to hard. [Read about it here](https://support.microsoft.com/en-us/help/2958414/dfs-replication-how-to-troubleshoot-missing-sysvol-and-netlogon-shares)
 
 Just be carefull so that you don't overwrite a good share that you were supposed to use.
 And double check that GPO's are working after a restore, else restore GPO from last known good backup. Otherwise it might cause a mismatch between GPO version in AD and GPO version in SYSVOL.
 
 ### Domain isn't a security bondary, a forest is
-I yet again, refer to the tiering model: https://support.microsoft.com/en-us/help/2958414/dfs-replication-how-to-troubleshoot-missing-sysvol-and-netlogon-shares
+ [I yet again, refer to the tiering model.](https://support.microsoft.com/en-us/help/2958414/dfs-replication-how-to-troubleshoot-missing-sysvol-and-netlogon-shares)
 
-This is a good read as well: https://blogs.technet.microsoft.com/389thoughts/2017/06/19/ad-2016-pam-trust-how-it-works-and-safety-advisory/
+[This is a good read as well.](https://blogs.technet.microsoft.com/389thoughts/2017/06/19/ad-2016-pam-trust-how-it-works-and-safety-advisory/)
 
 ### Monitor for NTLMv1 usage and disable it
 NTLMv1 is roughly 30 years old and an obselete authentication method.
