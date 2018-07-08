@@ -42,6 +42,9 @@
       <div class="container">
         <footer class="footer">
           {% include svg-icons.html %}
+          {% if site.tags != "" %}
+            {% include collecttags.html %}
+          {% endif %}
         </footer>
       </div>
     </div>
