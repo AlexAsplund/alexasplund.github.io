@@ -12,7 +12,7 @@ I use this for a lot of small stuff, like:
 -   When a new ticket comes in from the ticketing system (announced via email) -
     add it to my todo list and move the email to archive.
 
--   When an event is about to start beginning with "OOO:" and organizer is me -
+-   When an event is about to start beginning with "OOO" and organizer is me -
     Add an Out-of-office message for the duration of the event with a predefined
     internal and external message.
 
