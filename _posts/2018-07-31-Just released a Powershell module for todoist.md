@@ -18,6 +18,8 @@ Documentation of functions generated with platyPS: [https://github.com/AlexAsplu
 
 Any input on how to make it better is appreciated.
 
+I will make a follow-up post with how this was created.
+
 # Installing PSTodoist
 
 
