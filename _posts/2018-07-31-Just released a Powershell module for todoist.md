@@ -22,6 +22,7 @@ Any input on how to make it better is appreciated.
 
 
 ## Install latest release
+
 ```Powershell
     [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
 
@@ -108,99 +109,99 @@ Any input on how to make it better is appreciated.
 
 # Functions
 
-### [Close-TodoistTask](Close-TodoistTask.md)
+### [Close-TodoistTask](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Close-TodoistTask.md)
 
     Close-TodoistTask -Id 123456789
     Close-TodoistTask -Id 098765432,123466721
     Get-TodoistTask | ? {$_.Content -match "Stop Procrastinating"} | Close-TodoistTask
 
-### [Get-TodoistComment](Get-TodoistComment.md)
+### [Get-TodoistComment](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Get-TodoistComment.md)
 
     Get-TodoistComment -Id 1234 -Category "Task"
     Get-TodoistComment -Id 5678 -Category "Category"
 
-### [Get-TodoistLabel](Get-TodoistLabel.md)
+### [Get-TodoistLabel](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Get-TodoistLabel.md)
 
     Get-Todoistlabel
     Get-Todoistlabel -Token 1q2w3e4r5t6y7u8i99o0p
     $labels = Get-Todoistlabel | ? {$_.Content -match "My label"}
 
-### [Get-TodoistProject](Get-TodoistProject.md)
+### [Get-TodoistProject](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Get-TodoistProject.md)
 
     Get-Todoistproject
     Get-Todoistproject -Token 1q2w3e4r5t6y7u8i99o0p
     $projects = Get-Todoistproject | ? {$_.Content -match "Do dishes"} | Remove-TodoistProject
 
-### [Get-TodoistTask](Get-TodoistTask.md)
+### [Get-TodoistTask](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Get-TodoistTask.md)
 
     Get-TodoistTask
     Get-TodoistTask -Token 1q2w3e4r5t6y7u8i99o0p
     $Tasks = Get-TodoistTask | ? {$_.Content -match "dishes"}
 
-### [New-TodoistComment](New-TodoistComment.md)
+### [New-TodoistComment](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/New-TodoistComment.md)
 
     New-TodoistComment -Id 1234 -Content "Customer contacted"
     New-TodoistComment -Id 1234 -Content "New report" -Category Task -Verbose -AddAttachment -AttachmentResourceType "file" -AttachmentFileType "application/pdf" -AttachmentFileUrl "http://www.orimi.com/pdf-test.pdf" -AttachmentFileName "file.pdf"
 
-### [New-TodoistLabel](New-TodoistLabel.md)
+### [New-TodoistLabel](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/New-TodoistLabel.md)
 
     New-TodoistLabel -Name "My cool label"
 
-### [New-TodoistProject](New-TodoistProject.md)
+### [New-TodoistProject](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/New-TodoistProject.md)
 
     New-TodoistProject -Name "My cool project"
 
-### [New-TodoistTask](New-TodoistTask.md)
+### [New-TodoistTask](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/New-TodoistTask.md)
 
     New-TodoistTask -Content "Put out forest fires" -DueString "Tomorrow 4am"
 
-### [Open-TodoistTask](Open-TodoistTask.md)
+### [Open-TodoistTask](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Open-TodoistTask.md)
 
     Open-TodoistTask -Id 123456789
     Open-TodoistTask -Id 098765432,123466721
     Get-TodoistTask | ? {$_.Content -match "Start Procrastinating"} | Open-TodoistTask
 
-### [Remove-TodoistComment](Remove-TodoistComment.md)
+### [Remove-TodoistComment](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Remove-TodoistComment.md)
 
     Remove-TodoistComment -Id 123456789
     Remove-TodoistComment -Id 098765432,123466721
     Get-TodoistComment | ? {$_.Content -match "Big"} | Remove-TodoistComment
 
-### [Remove-TodoistLabel](Remove-TodoistLabel.md)
+### [Remove-TodoistLabel](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Remove-TodoistLabel.md)
 
     Remove-TodoistLabel -Id 123456789
     Remove-TodoistLabel -Id 098765432,123466721
     Get-TodoistLabel | ? {$_.Content -match "Big"} | Remove-TodoistLabel
 
-### [Remove-TodoistProject](Remove-TodoistProject.md)
+### [Remove-TodoistProject](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Remove-TodoistProject.md)
 
     Remove-TodoistProject -Id 123456789
     Remove-TodoistProject -Id 098765432,123466721
     Get-TodoistProject | ? {$_.Content -match "Big"} | Remove-TodoistProject
 
-### [Remove-TodoistTask](Remove-TodoistTask.md)
+### [Remove-TodoistTask](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Remove-TodoistTask.md)
 
     Remove-TodoistTask -Id 123456789
     Remove-TodoistTask -Id 098765432,123466721
     Get-TodoistTask | ? {$_.Content -match "Stop Procrastinating"} | Remove-TodoistTask
 
-### [Set-TodoistToken](Set-TodoistToken.md)
+### [Set-TodoistToken](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Set-TodoistToken.md)
 
     Set-TodoistToken 1q2w3e434rt56y7ui8o09
 
-### [Update-TodoistComment](Update-TodoistComment.md)
+### [Update-TodoistComment](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Update-TodoistComment.md)
 
     Update-TodoistComment -Id 1234 -Name "My updated comment"
 
-### [Update-TodoistLabel](Update-TodoistLabel.md)
+### [Update-TodoistLabel](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Update-TodoistLabel.md)
 
     Update-TodoistLabel -Id 1234 -Name "My updated label"
 
-### [Update-TodoistProject](Update-TodoistProject.md)
+### [Update-TodoistProject](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Update-TodoistProject.md)
 
     Update-TodoistProject -Id 1234 -Name "My updated project"
 
-### [Update-TodoistTask](Update-TodoistTask.md)
+### [Update-TodoistTask](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Update-TodoistTask.md)
 
     Update-TodoistTask -Id 1234 -Content "Put out forest fires" -DueString "In 2 years"
 
