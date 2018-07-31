@@ -12,9 +12,9 @@ A couple of weeks ago i saw that Todoist had released the V8 api in beta, and it
 So I started making a new module from scratch so that i could learn more on how to create good modules.
 It's not bug free, and I'm not a developer so It's not all according to best practice but it works fine and has a lot of features.
 
-You can find it here on Github: https://github.com/AlexAsplund/PSTodoist
+You can find it here on Github: [https://github.com/AlexAsplund/PSTodoist](https://github.com/AlexAsplund/PSTodoist)
 
-Documentation of functions generated with platyPS: https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/PSTodoist.md
+Documentation of functions generated with platyPS: [https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/PSTodoist.md](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/PSTodoist.md)
 
 Any input on how to make it better is appreciated.
 
