@@ -19,7 +19,8 @@ $Office365AdminCredential = Get-Credential -Message "Enter Office 365 admin cred
 ## The script
 
 You will need to install the [EWS API](https://www.microsoft.com/en-us/download/details.aspx?id=42951) before running this script.
-[Github link](https://gist.github.com/AlexAsplund/93285b6a3c62be559eeec3abec4f3c4b)
+
+[Github link to script](https://gist.github.com/AlexAsplund/93285b6a3c62be559eeec3abec4f3c4b)
 
 
 ****
