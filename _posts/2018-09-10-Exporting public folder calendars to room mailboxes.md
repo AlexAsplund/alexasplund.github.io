@@ -4,7 +4,7 @@ title: Exporting public folder calendars to room mailboxes
 ---
 
 I got a task to come up with a method to import room calendars in public folders to room resource mailboxes instead.
-A lot of the methods I found online involved a lot of manual hand cranking, so that was not viable for houndreds of calendars.
+A lot of the methods I found online involved a lot of manual hand cranking, and that't not viable for 100s of calendars.
 
 The outlook com-object didn't get me far so I started digging around the EWS API, and an hour or two later - it was finished.
 
