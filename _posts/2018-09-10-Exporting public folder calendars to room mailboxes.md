@@ -20,8 +20,8 @@ $Office365AdminCredential = Get-Credential -Message "Enter Office 365 admin cred
 ## The script
 
 * [Github link to script](https://gist.github.com/AlexAsplund/93285b6a3c62be559eeec3abec4f3c4b)
-* You will need to install the [EWS API](https://www.microsoft.com/en-us/download/details.aspx?id=42951) before running this script.
-* You will need to have permission in office 365 to change permissions for the '-RoomMailAddress'
+* You need to install the [EWS API](https://www.microsoft.com/en-us/download/details.aspx?id=42951) before running this script.
+* You need to have permission to change permissions for the '-RoomMailAddress' in Office 365.
 * The account used for '-ExchangeCredential' needs to be able to read/write to the public folder calendar.
 
 
