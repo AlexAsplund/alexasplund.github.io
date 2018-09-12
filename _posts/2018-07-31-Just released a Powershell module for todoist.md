@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Just released a Powershell module for todoist! PSTodoist
+categories: project
+project: PSTodoist
+github: https://github.com/AlexAsplund/PSTodoist
+projectdescription: A powershell module for todoist that uses the v8 api.
 ---
 A while back I decided to create a powershell module for todoist.
 
