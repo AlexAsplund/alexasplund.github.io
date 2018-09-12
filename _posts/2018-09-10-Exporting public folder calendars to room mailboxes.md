@@ -2,7 +2,7 @@
 layout: post
 title: Exporting public folder calendars to room mailboxes
 tags: [Powershell, EWS, Exchange]
-category: project
+categories: project
 project: Public folder calendar to exchange
 github: https://gist.github.com/AlexAsplund/93285b6a3c62be559eeec3abec4f3c4b
 ---

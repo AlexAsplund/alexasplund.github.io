@@ -1,9 +1,0 @@
-{% assign rawprojects = "" %}
-{% for post in site.posts %}
-  {% assign tprojects = post.project | join:'|' | append:'|' %}
-  {% assign rawprojects = rawprojects | append:tprojects %}
-{% endfor %}
-{% assign rawprojects = rawprojects | split:'|' | sort %}
-
-{% assign site.projects = rawprojects %}
-
