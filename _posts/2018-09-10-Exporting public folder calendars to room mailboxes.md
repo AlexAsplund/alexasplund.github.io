@@ -5,6 +5,7 @@ tags: [Powershell, EWS, Exchange]
 categories: project
 project: Public folder calendar to exchange
 github: https://gist.github.com/AlexAsplund/93285b6a3c62be559eeec3abec4f3c4b
+description: 
 ---
 
 I got a task to come up with a method to import room calendars in public folders to room resource mailboxes instead.

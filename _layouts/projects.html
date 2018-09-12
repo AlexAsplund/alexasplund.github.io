@@ -11,14 +11,15 @@ layout: default
         <h3>{{ post.project }}</h3>
         <br />
 
-        <a href="{{ post.github }}">Github URL</a> 
-        <a href="{{ post.url }}">Blog post link}</a>
-        
+        <a href="{{ post.github }}">Github URL</a><br/>
+        <a href="{{ post.url }}">Blog post link</a>
 
-
-        Tags: 
-        
-
+        Tags:
+        <ul>
+            {% for tag in  site.categories.project.tags %}
+                <li>tag</li>
+            {% endfor %}
+        </ul> 
     
     {% endfor %}
 
