@@ -48,7 +48,14 @@ Note: ExchangeCredential and Office365AdminCredential can be the same
 * You need to have permission to change permissions for the '-RoomMailAddress' in Office 365.
 * The account used for '-ExchangeCredential' needs to be able to read/write to the public folder calendar.
 
+## Caveats
 
+There are some limitations to this script:
+
+* The organizer might have a hard time cancelling appointments.
+   * A theoretical workaround is to CC the cancellation to the resource mailaddress but i haven't tested this yet.
+* If an organizer don't have a mailbox anymore, the copy will fail.
+* Cancelling copied appointments with '[Microsoft.Exchange.WebServices.Data.DeleteMode]::HardDelete' in EWS will send a cancellation to all attendees... I noticed.
 
 
 ****
