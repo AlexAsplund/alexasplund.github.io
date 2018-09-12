@@ -8,8 +8,6 @@ permalink: /about/
 
 ### Contact me
 
-Twitter: alexasplund
-
-Email: alex@automativity.com
-
+Twitter: alexasplund  
+Email: alex@automativity.com  
 Linkedin: [Link](https://www.linkedin.com/in/alex-asplund-54134156/)
