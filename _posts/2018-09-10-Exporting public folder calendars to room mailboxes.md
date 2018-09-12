@@ -12,10 +12,10 @@ The outlook com-object didn't get me far so I started digging around the EWS API
 
 <pre><code class="powershell">
 
-$ExchangeCredential = Get-Credential -Message "Enter exchange user credential"
-$Office365AdminCredential = Get-Credential -Message "Enter Office 365 admin credential"
+    $ExchangeCredential = Get-Credential -Message "Enter exchange user credential"
+    $Office365AdminCredential = Get-Credential -Message "Enter Office 365 admin credential"
 
-.\Import-CalendarFromPublicFolder.ps1 -ExchangeCredential $ExchangeCredential -Office365AdminCredential $Office365AdminCredential -PublicFolderPath 'HR\Rooms\Meeting room 1' -RoomMailAddress meetingroom1@contoso.com -ChangePermissions
+    .\Import-CalendarFromPublicFolder.ps1 -ExchangeCredential $ExchangeCredential -Office365AdminCredential $Office365AdminCredential -PublicFolderPath 'HR\Rooms\Meeting room 1' -RoomMailAddress meetingroom1@contoso.com -ChangePermissions
 
 </code></pre>
 
