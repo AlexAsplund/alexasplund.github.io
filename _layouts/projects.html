@@ -2,25 +2,23 @@
 layout: default
 ---
 <h1>My projects</h1>
-<article class="page">
+
 
 
     {% for post in site.categories.project %} 
-    
+    <article class="page"></article>
         <h3>{{ post.project }}</h3>
         <p> {{ projectdescription }}</p>
         <br/>
         <a href="{{ post.github }}">Github URL</a><br/>
         <a href="{{ post.url }}">Blog post link</a>
-        
-        <hr/>
-    
+    </article>
     {% endfor %}
 
 
     
 
-</article>
+
 
 
      
