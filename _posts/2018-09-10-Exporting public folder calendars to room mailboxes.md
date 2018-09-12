@@ -10,11 +10,30 @@ The outlook com-object didn't get me far so I started digging around the EWS API
 
 ## How to use it
 
+First, create the resource mailbox that you want to migrate to.
+After the resource is created, run the script:  
+
 {% highlight powershell %}
 
+# Get credentials 
 $ExchangeCredential = Get-Credential -Message "Enter exchange user credential"
 $Office365AdminCredential = Get-Credential -Message "Enter Office 365 admin credential"
-.\Import-CalendarFromPublicFolder.ps1 -ExchangeCredential $ExchangeCredential -Office365AdminCredential $Office365AdminCredential -PublicFolderPath 'HR\Rooms\Meeting room 1' -RoomMailAddress meetingroom1@contoso.com -ChangePermissions
+
+# Create a splat because you don't have a 32:9 screen
+$Splat = @{
+
+    ExchangeCredential = $ExchangeCredential
+    Office365AdminCredential= $Office365AdminCredential
+    PublicFolderPath = 'HR\Rooms\Meeting room 1' 
+    RoomMailAddress = meetingroom1@contoso.com 
+    ChangePermissions = $True    
+
+}
+
+# Run script
+.\Import-CalendarFromPublicFolder.ps1 @Splat
+ 
+
 
 {% endhighlight %}
 
