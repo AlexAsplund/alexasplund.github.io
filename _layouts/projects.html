@@ -6,18 +6,15 @@ layout: default
     <h2>Project</h2>
     <br />
 
-    
-    {% for project in site.projects %}
-      <h3>{{ project[0] }}</h3>
-      <ul> 
-        {% for post in project[1] %}
-          <li><a href="{{ post.url }}">Blog post: {{ post.title }}</a></li>
-          <li><a href="{{ post.github }}">Github link</a></li>
-        {% endfor %}
-      </ul>
+    {% for post in site.faqs %} 
+    {% if post.categories contains "project" %}
+    <h1>test</h1>
+    {% endif %}
     {% endfor %}
+
+
     
-<p>en1d23</p>
+<p>easdasd</p>
 </article>
 
 
