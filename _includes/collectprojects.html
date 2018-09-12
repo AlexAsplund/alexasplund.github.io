@@ -5,16 +5,5 @@
 {% endfor %}
 {% assign rawprojects = rawprojects | split:'|' | sort %}
 
-{% assign site.projects = "" %}
+{% assign site.projects = rawprojects %}
 
-{% for project in rawprojects %}
-  {% if project != "" %}
-    {% if projects == "" %}
-      {% assign projects = project | split:'|' %}
-    {% endif %}
-    {% unless projects contains project %}
-      {% assign site.projects = projects | join:'|' | append:'|' | append:project | split:'|' %}
-    {% endunless %}
-  {% endif %}
-  
-{% endfor %}
