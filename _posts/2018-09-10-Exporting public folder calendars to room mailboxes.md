@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Exporting public folder calendars to room mailboxes
+tags: [Powershell, EWS, Exchange]
 ---
 
 I got a task to come up with a method to import room calendars in public folders to room resource mailboxes instead.
