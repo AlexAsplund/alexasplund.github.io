@@ -5,7 +5,7 @@
 {% endfor %}
 {% assign rawprojects = rawprojects | split:'|' | sort %}
 
-{% assign site.project = "" %}
+{% assign site.projects = "" %}
 
 {% for project in rawprojects %}
   {% if project != "" %}
