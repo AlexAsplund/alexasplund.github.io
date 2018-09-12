@@ -1,0 +1,18 @@
+{% assign rawprojects = "" %}
+{% for post in site.posts %}
+  {% assign tprojects = post.project | join:'|' | append:'|' %}
+  {% assign rawprojects = rawprojects | append:tprojects %}
+{% endfor %}
+{% assign rawprojects = rawprojects | split:'|' | sort %}
+
+{% assign site.project = "" %}
+{% for project in rawprojects %}
+  {% if project != "" %}
+    {% if projects == "" %}
+      {% assign projects = project | split:'|' %}
+    {% endif %}
+    {% unless projects contains project %}
+      {% assign projects = projects | join:'|' | append:'|' | append:project | split:'|' %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
