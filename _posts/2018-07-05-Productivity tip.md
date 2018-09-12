@@ -6,7 +6,7 @@ title: GTD in IT - Handling multiple projects and still being productive
 About a year ago I stumbled upon what was for me some kind of holy grail.
 I struggled for a long time with managing multiple parallel projects and lots and lots of tasks was forgotten about. Everything was an emergency and most of my time was spent putting out fires only to see a new one arise.
 
-In comes the world of productivity; A mention in one of the podcasts of ADHD mentioned something about a productivity method (sorry, can't remember which one) and it got me googling.
+In comes the world of productivity; A podcast mentioned something about a productivity method (sorry, can't remember which one) and it got me googling.
 I eventually landed on a talk about David Allen - The creator of GTD - It seemed to be so much more than a bunch of "productivity hacks".
 
 
