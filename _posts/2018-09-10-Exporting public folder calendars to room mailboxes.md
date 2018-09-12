@@ -37,6 +37,10 @@ $Splat = @{
 
 {% endhighlight %}
 
+```
+Note: ExchangeCredential and Office365AdminCredential can be the same
+```
+
 ## The script
 
 * [Github link to script](https://gist.github.com/AlexAsplund/93285b6a3c62be559eeec3abec4f3c4b)
