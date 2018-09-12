@@ -13,7 +13,8 @@
       {% assign projects = project | split:'|' %}
     {% endif %}
     {% unless projects contains project %}
-      {% assign projects = projects | join:'|' | append:'|' | append:project | split:'|' %}
+      {% assign site.projects = projects | join:'|' | append:'|' | append:project | split:'|' %}
     {% endunless %}
   {% endif %}
+  
 {% endfor %}
