@@ -8,6 +8,13 @@ A lot of the methods I found online involved a lot of manual hand cranking, and 
 
 The outlook com-object didn't get me far so I started digging around the EWS API, and an hour or two later - it was finished.
 
+## The script
+
+* [Github link to script](https://gist.github.com/AlexAsplund/93285b6a3c62be559eeec3abec4f3c4b)
+* You need to install the [EWS API](https://www.microsoft.com/en-us/download/details.aspx?id=42951) before running this script.
+* You need to have permission to change permissions for the '-RoomMailAddress' in Office 365.
+* The account used for '-ExchangeCredential' needs to be able to read/write to the public folder calendar.
+
 ## How to use it
 
 First, create the resource mailbox that you want to migrate to.
@@ -40,13 +47,6 @@ $Splat = @{
 
 Note: ExchangeCredential and Office365AdminCredential can be the same
 
-
-## The script
-
-* [Github link to script](https://gist.github.com/AlexAsplund/93285b6a3c62be559eeec3abec4f3c4b)
-* You need to install the [EWS API](https://www.microsoft.com/en-us/download/details.aspx?id=42951) before running this script.
-* You need to have permission to change permissions for the '-RoomMailAddress' in Office 365.
-* The account used for '-ExchangeCredential' needs to be able to read/write to the public folder calendar.
 
 ## Caveats
 
