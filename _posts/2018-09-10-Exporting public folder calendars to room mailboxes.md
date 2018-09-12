@@ -24,8 +24,8 @@ $Splat = @{
 
     ExchangeCredential = $ExchangeCredential
     Office365AdminCredential = $Office365AdminCredential
-    PublicFolderPath = 'HR\Rooms\Meeting room 1' 
-    RoomMailAddress = meetingroom1@contoso.com 
+    PublicFolderPath = 'HR\Rooms\Meeting room 1'
+    RoomMailAddress = 'meetingroom1@contoso.com'
     ChangePermissions = $True    
 
 }
