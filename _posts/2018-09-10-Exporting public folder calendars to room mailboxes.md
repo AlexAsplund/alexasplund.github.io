@@ -23,7 +23,7 @@ $Office365AdminCredential = Get-Credential -Message "Enter Office 365 admin cred
 $Splat = @{
 
     ExchangeCredential = $ExchangeCredential
-    Office365AdminCredential= $Office365AdminCredential
+    Office365AdminCredential = $Office365AdminCredential
     PublicFolderPath = 'HR\Rooms\Meeting room 1' 
     RoomMailAddress = meetingroom1@contoso.com 
     ChangePermissions = $True    
