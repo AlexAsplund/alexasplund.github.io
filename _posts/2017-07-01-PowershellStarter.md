@@ -3,7 +3,7 @@ layout: post
 title: Powershell starter - Run powershell scripts as a Windows service easily
 categories: project
 project: PowershellStarter
-github: https://github.com/AlexAsplund/Powershell starter
+github: https://github.com/AlexAsplund/PowershellStarter
 projectdescription: A service made in C# that launches powershell.exe -file <path>.
 tags: [Powershell, C#, Windows, Services,]
 ---
