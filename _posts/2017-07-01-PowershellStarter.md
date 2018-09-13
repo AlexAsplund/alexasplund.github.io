@@ -13,4 +13,4 @@ This windows service reads the path of the script and it's arguments from the ap
 It also redirects output and errors to eventlog and terminates itself if the script would stop running.
 I have tested it on Windows Server 2012 and Windows 10.
 
-* Link to [Github]({{ site.github }})
+* Link to [Github]({{ page.github }})
