@@ -5,19 +5,24 @@ layout: default
 
 
 <div id="main" role="main" class="container">
-    {% for post in site.categories.project %} 
-    <article class="post" style="user-select: auto;">
-        <div class="entry" style="user-select: auto;">
-            <h3>{{ post.project }}</h3>
-            <p> {{ post.projectdescription }}</p>
-            <br/>
-            <a href="{{ post.github }}">Github URL</a><br/>
-            <a href="{{ post.url }}">Blog post link</a>
-        </div>
-    </article>
-</div>
-    {% endfor %}
+    <div class="posts" style="user-select: auto;">
+        {% for post in site.categories.project %} 
 
+        <article class="post" style="user-select: auto;">
+            <div class="entry" style="user-select: auto;">
+                <h3>{{ post.project }}</h3>
+                <p> {{ post.projectdescription }}</p>
+                <br/>
+                <a href="{{ post.github }}">Github URL</a><br/>
+                <a href="{{ post.url }}">Blog post link</a>
+            </div>
+        </article>
+        {% endfor %}
+
+
+
+    </div>
+</div>
 
     
 
