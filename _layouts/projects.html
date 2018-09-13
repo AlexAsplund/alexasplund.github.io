@@ -4,9 +4,8 @@ layout: default
 <h1>My projects</h1>
 
 
-
+<div id="main" role="main" class="container">
     {% for post in site.categories.project %} 
-    
     <article class="post" style="user-select: auto;">
         <div class="entry" style="user-select: auto;">
             <h3>{{ post.project }}</h3>
@@ -16,7 +15,7 @@ layout: default
             <a href="{{ post.url }}">Blog post link</a>
         </div>
     </article>
-    
+</div>
     {% endfor %}
 
 
