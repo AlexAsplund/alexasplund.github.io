@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Exporting public folder calendars to room mailboxes
+title: Exporting public folder calendars to resource mailboxes
 tags: [Powershell, EWS, Exchange]
 categories: project
 project: Public folder calendar to exchange migration script
@@ -8,7 +8,7 @@ github: https://gist.github.com/AlexAsplund/93285b6a3c62be559eeec3abec4f3c4b
 projectdescription: A script that uses the EWS api to copy a public folder calendar to a resource mailbox in exchange online
 ---
 
-I got a task to come up with a method to import room calendars in public folders to room resource mailboxes instead.
+I got a task to come up with a method to import resource calendars in public folders to resource resource mailboxes instead.
 A lot of the methods I found online involved a lot of manual hand cranking, and that't not viable for 100s of calendars.
 
 The outlook com-object didn't get me far so I started digging around the EWS API, and an hour or two later - it was finished.
@@ -17,7 +17,7 @@ The outlook com-object didn't get me far so I started digging around the EWS API
 
 * [Github link to script](https://gist.github.com/AlexAsplund/93285b6a3c62be559eeec3abec4f3c4b)
 * You need to install the [EWS API](https://www.microsoft.com/en-us/download/details.aspx?id=42951) before running this script.
-* You need to have permission to change permissions for the '-RoomMailAddress' in Office 365.
+* You need to have permission to change permissions for the '-ResourceMailAddress' in Office 365.
 * The account used for '-ExchangeCredential' needs to be able to read/write to the public folder calendar.
 
 ## How to use it
@@ -36,8 +36,8 @@ $Splat = @{
 
     ExchangeCredential = $ExchangeCredential
     Office365AdminCredential = $Office365AdminCredential
-    PublicFolderPath = 'HR\Rooms\Meeting room 1'
-    RoomMailAddress = 'meetingroom1@contoso.com'
+    PublicFolderPath = 'HR\Resources\Meeting resource 1'
+    ResourceMailAddress = 'meetingresource1@contoso.com'
     ChangePermissions = $True    
 
 }
