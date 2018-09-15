@@ -214,7 +214,7 @@ Now, if you're not the inbox-zero type like me, you would problaly want to press
 But let's see what we can do with the items...
 
 
-## Exploring items
+## Exploring items and forwarding email
 
 
 {% highlight powershell %}
@@ -268,7 +268,7 @@ void Forward(Microsoft.Exchange.WebServices.Data.MessageBody bodyPrefix, Params 
 
 **'Microsoft.Exchange.WebServices.Data.MessageBody bodyPrefix'** tells us that it problably want some kind of prefix, probably 'fw' or something right?
 
-The **'Params Microsoft.Exchange.WebServices.Data.EmailAddress[] toRecipients'** and **'System.Collections.Generic.IEnumerable[Microsoft.Exchange.WebServices.Data.EmailAddress] toRecipients'** tells us that we will either need to supply one email address or a **collection** of email addresses.
+**'Microsoft.Exchange.WebServices.Data.EmailAddress[] toRecipients'** and **'System.Collections.Generic.IEnumerable[Microsoft.Exchange.WebServices.Data.EmailAddress] toRecipients'** tells us that we will either need to supply one email address or a **collection** of email addresses.
 
 Let's explore the 'Microsoft.Exchange.WebServices.Data.MessageBody':
 
@@ -278,5 +278,85 @@ Let's explore the 'Microsoft.Exchange.WebServices.Data.MessageBody':
 Microsoft.Exchange.WebServices.Data.MessageBody new()
 Microsoft.Exchange.WebServices.Data.MessageBody new(Microsoft.Exchange.WebServices.Data.BodyType bodyType, string text)
 Microsoft.Exchange.WebServices.Data.MessageBody new(string text)
+
+{% endhighlight %}
+
+Looks like you can supply a BodyType here as well, if you want to send  the message with HTML or Text formating.
+But let's skip that and just create a new MessageBody with the string 'CUSTOMFORWARD: <subject>'.
+
+If my theory is right the email will arrive as "CUSTOMFORWARD: <Subject>" right?
+And since you problably can and since it's easy: Let's supply the email as a regular string
+
+
+{% highlight powershell %}
+
+$MessageBody = [Microsoft.Exchange.WebServices.Data.MessageBody]::new("CUSTOMFORWARD: $($Item.Subject)")
+$Item.Forward($MessageBody, '<your email>')
+
+
+{% endhighlight %}
+
+Look in your inbox and see the result.
+
+## Moving an email
+
+As we saw earlier, there was a 'Move()' method as well.
+
+This need either a 'FolderId' if you want to move it to a self made folder, another mailbox or to public folders.
+Or it wants a 'WellKnownFolderName' (as we used earlier).
+
+Let's move it to Drafts:
+
+{% highlight powershell %}
+
+$WellKnownFolderName = [Microsoft.Exchange.WebServices.Data.WellKnownFolderName]::Drafts
+$Item.Move($WellKnownFolderName)
+
+{% endhighlight %}
+
+And now it shows up in the drafts folder.
+
+## Exploring other items
+
+In exchange there is notes, to do lists, calendars and so on. All of those are fetchable with about the same method.
+
+### Fetching calendar items
+
+{% highlight powershell %}
+
+$WellKnownCalendarFolder = [Microsoft.Exchange.WebServices.Data.WellKnownFolderName]::Calendar
+$Calendarbind = [Microsoft.Exchange.WebServices.Data.Folder]::Bind($ExchangeService, $WellKnownCalendarFolder)
+$ItemView = [Microsoft.Exchange.WebServices.Data.ItemView]::new(99999)
+
+$Calendarbind.FindItems($ItemView)
+
+# Or fetch with FindAppointments() with a date range
+
+$CalendarView = [Microsoft.Exchange.WebServices.Data.CalendarView]::((Get-Date),(Get-Date).AddDays(30))
+$Calendarbind.FindAppointments
+
+
+{% endhighlight %}
+
+### Fetching notes
+
+{% highlight powershell %}
+$ItemView = [Microsoft.Exchange.WebServices.Data.ItemView]::new(99999)
+$WellKnownNoteFolder = [Microsoft.Exchange.WebServices.Data.WellKnownFolderName]::Notes
+$NoteBind = [Microsoft.Exchange.WebServices.Data.Folder]::Bind($ExchangeService, $WellKnownNoteFolder)
+
+$NoteBind.FindItems($ItemView)
+
+{% endhighlight %}
+
+### Fetching todo's
+
+{% highlight powershell %}
+
+$ItemView = [Microsoft.Exchange.WebServices.Data.ItemView]::new(99999)
+$WellKnownTodoFolder = [Microsoft.Exchange.WebServices.Data.WellKnownFolderName]::Tasks
+$TodoBind = [Microsoft.Exchange.WebServices.Data.Folder]::Bind($ExchangeService, $WellKnownTodoFolder)
+
+$TodoBind.FindItems($ItemView)
 
 {% endhighlight %}
