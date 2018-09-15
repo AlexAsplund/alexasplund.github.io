@@ -4,11 +4,9 @@ title: Using powershell to utilize the Exchange Web Services API
 tags: [Powershell, EWS, Exchange]
 ---
 
-I know there is some of these tutorials or how-to's around, but why not make my own?
 
-
-## First
-...download and install the EWS managed API from [here.](https://www.microsoft.com/en-us/download/details.aspx?id=42951)
+## Downloading the EWS managed API
+First download and install the EWS managed API from [here.](https://www.microsoft.com/en-us/download/details.aspx?id=42951)
 
 
 ## Connecting to Office 365 with EWS
@@ -77,7 +75,7 @@ $ExchangeService = Connect-EWS -Credential $Credential -Domain contoso.com -Auto
 
 {% endhighlight %}
 
-Now the EWS API has created a ExchangeService object for you in the $ExchangeService variable.
+Now the EWS API has created a ExchangeService object for you in the **$ExchangeService** variable.
 This is the variable that you use mainly to bind to stuff such like calendars, inboxes, public folders etc.
 
 
@@ -120,7 +118,7 @@ Copy
 Delete                      
 Empty                       
 Equals                      
-FindFolders                 
+**FindFolders**
 FindItems                   
 GetHashCode                 
 GetLoadedPropertyDefinitions
@@ -143,7 +141,7 @@ Found something familiar? I would guess that the method 'MarkAllItemsAsRead' is 
 Tho i wouldn't mess around to much with stuff like Delete or move on my own account.
 
 
-Let's find out how to fetch some emails in our inbox, the 'FindItems' method looks like a nice candidate:
+Let's find out how to fetch some emails in our inbox, the **'FindItems'** method looks like a nice candidate:
 
 
 {% highlight powershell %}
@@ -157,7 +155,7 @@ $Inbox.FindItems.OverloadDefinitions -replace "(.+ )(.+\()(.+)",'$2$3' | foreach
 
 1 - FindItems(Microsoft.Exchange.WebServices.Data.SearchFilter searchFilter, Microsoft.Exchange.WebServices.Data.ItemView view)
 2 - FindItems(string queryString, Microsoft.Exchange.WebServices.Data.ItemView view)
-3 - FindItems(Microsoft.Exchange.WebServices.Data.ItemView view)
+**3 - FindItems(Microsoft.Exchange.WebServices.Data.ItemView view)**
 4 - FindItems(Microsoft.Exchange.WebServices.Data.SearchFilter searchFilter, Microsoft.Exchange.WebServices.Data.ItemView view, Microsoft.Exchange.WebServices.Data.Grouping groupBy)
 5 - FindItems(string queryString, Microsoft.Exchange.WebServices.Data.ItemView view, Microsoft.Exchange.WebServices.Data.Grouping groupBy)
 6 - FindItems(Microsoft.Exchange.WebServices.Data.ItemView view, Microsoft.Exchange.WebServices.Data.Grouping groupBy)
@@ -165,10 +163,13 @@ $Inbox.FindItems.OverloadDefinitions -replace "(.+ )(.+\()(.+)",'$2$3' | foreach
 {% endhighlight %}
 
 
-This tells us that we need to supply the FindItems method with one of the combinations above.
+This tells us that we need to supply the **FindItems** method with one of the combinations above.
 
-If we want to list everything in our inbox, the most likely candidate is row 3; 'FindItems(Microsoft.Exchange.WebServices.Data.ItemView view)'.
-So we need to find out what 'Microsoft.Exchange.WebServices.Data.ItemView' is.
+If we want to list everything in our inbox, the most likely candidate is row 3: 
+**'FindItems(Microsoft.Exchange.WebServices.Data.ItemView view)'**
+
+
+So we need to find out what **'Microsoft.Exchange.WebServices.Data.ItemView'** is.
 
 
 {% highlight powershell %}
@@ -179,9 +180,10 @@ So we need to find out what 'Microsoft.Exchange.WebServices.Data.ItemView' is.
 
 [Microsoft.Exchange.WebServices.Data.ItemView]::new
 
-OverloadDefinitions                                                                                                                                          ------------------------------------                                                                                                    
+OverloadDefinitions
+------------------------------------
 Microsoft.Exchange.WebServices.Data.ItemView new(int pageSize)
-Microsoft.Exchange.WebServices.Data.ItemView new(int pageSize, int offset)                    
+Microsoft.Exchange.WebServices.Data.ItemView new(int pageSize, int offset)
 Microsoft.Exchange.WebServices.Data.ItemView new(int pageSize, int offset, Microsoft.Exchange.WebServices.Data.OffsetBasePoint offsetBasePoint)
 
 
@@ -198,9 +200,9 @@ $ItemView = [Microsoft.Exchange.WebServices.Data.ItemView]::new(99999)
 
 With a quick recap:
 
-1. We found out that we would try the $Inbox.FindItems() method
-2. To fetch as many items as possible, the most viable option seemed to be the Overload that only needed an "ItemView" object in it
-3. We used the class method "New" on the [Microsoft.Exchange.WebServices.Data.ItemView] class to create a variable named $ItemView
+1. We found out that we would try the **$Inbox.FindItems()** method
+2. To fetch as many items as possible, the most viable option seemed to be the Overload that only needed an "**ItemView**" object in it
+3. We used the class method "**New**" on the **[Microsoft.Exchange.WebServices.Data.ItemView]** class to create a variable named $ItemView
 
 
 {% highlight powershell %}
@@ -211,7 +213,7 @@ $Inbox.FindItems($ItemView)
 {% endhighlight %}
 
 Now, if you're not the inbox-zero type like me, you would problaly want to press ctrl+c depending on how many emails you have.
-But let's see what we can do with the items...
+Let's see what we can do with the items...
 
 
 ## Exploring items and forwarding email
@@ -266,11 +268,13 @@ void Forward(Microsoft.Exchange.WebServices.Data.MessageBody bodyPrefix, Params 
 
 {% endhighlight %}
 
-**'Microsoft.Exchange.WebServices.Data.MessageBody bodyPrefix'** tells us that it problably want some kind of prefix, probably 'fw' or something right?
+**'Microsoft.Exchange.WebServices.Data.MessageBody bodyPrefix'**:
+This tells us that it problably want some kind of prefix, probably 'fw' or something right?
 
-**'Microsoft.Exchange.WebServices.Data.EmailAddress[] toRecipients'** and **'System.Collections.Generic.IEnumerable[Microsoft.Exchange.WebServices.Data.EmailAddress] toRecipients'** tells us that we will either need to supply one email address or a **collection** of email addresses.
+**'Microsoft.Exchange.WebServices.Data.EmailAddress[] toRecipients'** and **'System.Collections.Generic.IEnumerable[Microsoft.Exchange.WebServices.Data.EmailAddress] toRecipients'**:
+This tells us that we will either need to supply one email address or a **collection** of email addresses.
 
-Let's explore the 'Microsoft.Exchange.WebServices.Data.MessageBody':
+Let's explore the **'Microsoft.Exchange.WebServices.Data.MessageBody'**:
 
 {% highlight powershell %}
 [Microsoft.Exchange.WebServices.Data.MessageBody]::new
@@ -281,7 +285,7 @@ Microsoft.Exchange.WebServices.Data.MessageBody new(string text)
 
 {% endhighlight %}
 
-Looks like you can supply a BodyType here as well, if you want to send  the message with HTML or Text formating.
+Looks like you can supply a **BodyType** here as well, if you want to send  the message with HTML or Text formating.
 But let's skip that and just create a new MessageBody with the string 'CUSTOMFORWARD: <subject>'.
 
 If my theory is right the email will arrive as "CUSTOMFORWARD: <Subject>" right?
@@ -358,5 +362,28 @@ $WellKnownTodoFolder = [Microsoft.Exchange.WebServices.Data.WellKnownFolderName]
 $TodoBind = [Microsoft.Exchange.WebServices.Data.Folder]::Bind($ExchangeService, $WellKnownTodoFolder)
 
 $TodoBind.FindItems($ItemView)
+
+{% endhighlight %}
+
+### Fetching folders and items from public folders
+
+
+{% highlight powershell %}
+
+$FolderView = [Microsoft.Exchange.WebServices.Data.FolderView]::new(10000)
+$WellKnownPublicFolder = [Microsoft.Exchange.WebServices.Data.WellKnownFolderName]::PublicFoldersRoot
+$PublicFolderBind = [Microsoft.Exchange.WebServices.Data.Folder]::Bind($ExchangeService, $WellKnownPublicFolder)
+
+
+# List all folders
+$PublicFolderBind.FindFolders($FolderView)
+
+# List all items 
+$ItemView = [Microsoft.Exchange.WebServices.Data.ItemView]::new(99999)
+$PublicFolderBind.FindItems($ItemView)
+
+# Get another folder
+$Folder = $PublicFolderBind.FindFolders($FolderView) | ? {$_.DisplayName -eq 'HR Calendar'}
+$Folder.FindItems($ItemView)
 
 {% endhighlight %}
