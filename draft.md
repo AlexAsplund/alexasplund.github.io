@@ -367,3 +367,26 @@ $TodoBind = [Microsoft.Exchange.WebServices.Data.Folder]::Bind($ExchangeService,
 $TodoBind.FindItems($ItemView)
 
 {% endhighlight %}
+
+### Fetching folders and items from public folders
+
+
+{% highlight powershell %}
+
+$FolderView = [Microsoft.Exchange.WebServices.Data.FolderView]::new(10000)
+$WellKnownPublicFolder = [Microsoft.Exchange.WebServices.Data.WellKnownFolderName]::PublicFoldersRoot
+$PublicFolderBind = [Microsoft.Exchange.WebServices.Data.Folder]::Bind($ExchangeService, $WellKnownPublicFolder)
+
+
+# List all folders
+$PublicFolderBind.FindFolders($FolderView)
+
+# List all items 
+$ItemView = [Microsoft.Exchange.WebServices.Data.ItemView]::new(99999)
+$PublicFolderBind.FindItems($ItemView)
+
+# Get another folder
+$Folder = $PublicFolderBind.FindFolders($FolderView) | ? {$_.DisplayName -eq 'HR Calendar'}
+$Folder.FindItems($ItemView)
+
+{% endhighlight %}
