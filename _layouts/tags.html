@@ -1,10 +1,22 @@
 ---
 layout: default
+title: Tags
 ---
 
 <article class="page">
-<h1>Tags</h1>
 {% assign sorted_tags = site.tags | sort %}
+<h1>Index</h1>
+<ul>
+
+{% for tag in sorted_tags %}
+  <li>
+    <a href="{{ tag[0] }}">{{ tag[0] }}</a>
+  </li>
+{% endfor %}
+
+</ul>
+
+
 {% for tag in sorted_tags %}
   <h3  id="{{ tag[0] }}">{{ tag[0] }}</h3>
   <ul>
