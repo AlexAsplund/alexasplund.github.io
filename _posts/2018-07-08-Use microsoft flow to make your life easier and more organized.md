@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Productivity tip - Use microsoft flow to make your life easier and more organized.
+tags: [Microsoft, Office 365, Flow, Productivity]
 ---
 
 A year ago i discovered Microsoft Flow.

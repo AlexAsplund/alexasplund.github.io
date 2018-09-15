@@ -1,6 +1,7 @@
 ---
 layout: post
 title: GTD in IT - Handling multiple projects and still being productive
+tags: [Productivity, GTD]
 ---
 
 About a year ago I stumbled upon what was for me some kind of holy grail.

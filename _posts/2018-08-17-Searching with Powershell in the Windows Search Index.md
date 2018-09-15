@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Searching with Powershell in the Windows Search Index
+tags: [Windows, Search, Powershell]
 ---
 Happened to go down the rabbit hole and found out that you can search the data stored by Windows Search in powershell.
 
