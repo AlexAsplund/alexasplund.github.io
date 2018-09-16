@@ -4,15 +4,26 @@ title: Recommended resources
 permalink: /resources/
 
 resources:
-  - name: Books
-    name: Getting things done
-      author: David Allen
+  - books:
+    - name: Getting things done
+      description: David Allen
+      url:
     - name: The Power of habit
-      author: Charles Duhigg
+      description: Charles Duhigg
+      url:
     - name: Deep Work
-      author: Cal Newport
+      description: Cal Newport
+      url:
     - name: The One Thing
-      author: Gary Keller
+      description: Gary Keller
+      url:
+  - websites:
+    - name: Kevin Marquettes blog
+      description: A great blog with a lot of valuable content      
+      url: https://kevinmarquette.github.io/
+    - name: The powershell subreddit
+      description: Great community that offers a lot of help and let's you stay on top of what's new in Powershell.
+      url: https://reddit.com/r/powershell
 ---    
 
 {% for resource in page.resources %}
