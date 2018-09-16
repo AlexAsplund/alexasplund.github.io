@@ -38,9 +38,9 @@ resources:
 ---  
 
 {% endfor %}
-
-{% for section in resource.books %}
 ### Books
+{% for section in resource.books %}
+
 
 #### {{ section.name }}
 
