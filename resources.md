@@ -26,7 +26,7 @@ resources:
       url: https://reddit.com/r/powershell
 ---    
 
-{% for resource in page.resources %}
+{% for resource in page.resources.books %}
     <h3>{{ resource.name }}</h3>
     <ul>
         {% for section in resource.name %}
