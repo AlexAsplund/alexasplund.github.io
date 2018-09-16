@@ -383,7 +383,8 @@ $PublicFolderBind.FindFolders($FolderView)
 $ItemView = [Microsoft.Exchange.WebServices.Data.ItemView]::new(99999)
 $PublicFolderBind.FindItems($ItemView)
 
-# Get another folder
+# Get a subfolder
+
 $Folder = $PublicFolderBind.FindFolders($FolderView) | ? {$_.DisplayName -eq 'HR Calendar'}
 $Folder.FindItems($ItemView)
 
