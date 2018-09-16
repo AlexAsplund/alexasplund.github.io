@@ -26,10 +26,9 @@ resources:
       url: https://reddit.com/r/powershell
 ---    
 
-{% for resource in page.resources %}
 ### Blogs and websites
 
-{% for section in resource.websites %}
+{% for section in page.resources.websites %}
 #### {{ section.name }}
 
 {{ section.description }}
@@ -42,7 +41,7 @@ resources:
 
 
 ### Books    
-{% for section in resource.books %}
+{% for section in page.resources.books %}
 #### {{ section.name }}
 
 {{ section.description }}
@@ -52,7 +51,3 @@ resources:
 ---  
 
 {% endfor %}
-
-{% endfor %}
-
-<p>test2</p>
