@@ -262,8 +262,10 @@ What if we wanted to forward it?
 
 $Item.Forward
 
-OverloadDefinitions                                                                                                                                          ------------------------------                                                                                                    
-void Forward(Microsoft.Exchange.WebServices.Data.MessageBody bodyPrefix, Params Microsoft.Exchange.WebServices.Data.EmailAddress[] toRecipients)             void Forward(Microsoft.Exchange.WebServices.Data.MessageBody bodyPrefix, System.Collections.Generic.IEnumerable[Microsoft.Exchange.WebServices.Data.EmailAddress] toRecipients)
+OverloadDefinitions
+------------------------------
+void Forward(Microsoft.Exchange.WebServices.Data.MessageBody bodyPrefix, Params Microsoft.Exchange.WebServices.Data.EmailAddress[] toRecipients)
+void Forward(Microsoft.Exchange.WebServices.Data.MessageBody bodyPrefix, System.Collections.Generic.IEnumerable[Microsoft.Exchange.WebServices.Data.EmailAddress] toRecipients)
 
 {% endhighlight %}
 
