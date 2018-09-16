@@ -27,6 +27,20 @@ resources:
 ---    
 
 {% for resource in page.resources %}
+### Blogs and websites
+
+{% for section in resource.websites %}
+#### {{ section.name }}
+
+{{ section.description }}
+
+[**Link**]({{ section.url}})
+
+---  
+
+{% endfor %}
+
+
 ### Books    
 {% for section in resource.books %}
 #### {{ section.name }}
@@ -34,7 +48,8 @@ resources:
 {{ section.description }}
 
 [**Link**]({{ section.url}})
-  
+
+---  
 
 {% endfor %}
 
