@@ -27,8 +27,8 @@ resources:
 ---    
 
 ### Blogs and websites
-
-{% for section in page.resources.websites %}
+{% for section in page.resources %}
+{% for section in resource.websites %}
 #### {{ section.name }}
 
 {{ section.description }}
@@ -42,7 +42,7 @@ resources:
 ===
 
 ### Books    
-{% for section in page.resources.books %}
+{% for section in resource.books %}
 #### {{ section.name }}
 
 {{ section.description }}
@@ -51,4 +51,5 @@ resources:
 
 ---  
 
+{% endfor %}
 {% endfor %}
