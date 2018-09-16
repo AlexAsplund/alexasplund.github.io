@@ -42,8 +42,10 @@ resources:
 ---
 ---
 
-### Books    
+    
 {% for section in resource.books %}
+### Books
+
 #### {{ section.name }}
 
 {{ section.description }}
