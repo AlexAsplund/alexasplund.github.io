@@ -7,16 +7,16 @@ permalink: /resources/
 books:
 - name: Getting things done
   description: David Allen
-  url:
+  url: https://en.wikipedia.org/wiki/Getting_Things_Done
 - name: The Power of habit
   description: Charles Duhigg
-  url:
+  url: https://en.wikipedia.org/wiki/The_Power_of_Habit
 - name: Deep Work
   description: Cal Newport
-  url:
+  url: http://calnewport.com
 - name: The One Thing
   description: Gary Keller
-  url:
+  url: https://en.wikipedia.org/wiki/The_ONE_Thing_(book)
 websites:
 - name: Kevin Marquettes blog
   description: A great blog with a lot of valuable content      
@@ -46,7 +46,7 @@ websites:
 #### {{ section.name }}
 
 * Author: {{ section.description }}
-
+* [{{ section.url}}]({{ section.url}})
 
 
 
