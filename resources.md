@@ -27,11 +27,17 @@ resources:
 ---    
 
 {% for resource in page.resources %}
-    <ul>
-        {% for section in resource.books %}
-            <li>{{ section.name }}</li>
-        {% endfor %}
-    </ul>
+### Books    
+{% for section in resource.books %}
+#### {{ section.name }}
+
+{{ section.description }}
+
+[**Link**]({{ section.url}})
+  
+
+{% endfor %}
+
 {% endfor %}
 
 <p>test2</p>
