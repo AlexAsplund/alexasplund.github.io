@@ -34,3 +34,5 @@ resources:
         {% endfor %}
     </ul>
 {% endfor %}
+
+<p>test</p>
