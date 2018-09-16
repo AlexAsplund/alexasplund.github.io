@@ -5,7 +5,7 @@ permalink: /resources/
 
 resources:
   - name: Books
-    - name: Getting things done
+    name: Getting things done
       author: David Allen
     - name: The Power of habit
       author: Charles Duhigg
