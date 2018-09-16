@@ -34,4 +34,4 @@ resources:
     </ul>
 {% endfor %}
 
-<p>test</p>
+<p>test2</p>
