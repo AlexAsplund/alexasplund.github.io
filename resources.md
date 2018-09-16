@@ -26,18 +26,18 @@ websites:
   url: https://reddit.com/r/powershell
 ---    
 
-### Blogs and websites
+## Blogs and websites
 {% for section in page.websites %}
-#### {{ section.name }}
+#### [{{ section.name }}]({{ section.url }})
 
 {{ section.description }} 
 * [{{ section.url}}]({{ section.url}})
 
-
+<br />
 
 {% endfor %}
 ---  
-### Books
+## Books
 {% for section in page.books %}
 
 
