@@ -27,7 +27,7 @@ resources:
 ---    
 
 ### Blogs and websites
-{% for section in page.resources %}
+{% for resource in page.resources %}
 {% for section in resource.websites %}
 #### {{ section.name }}
 
