@@ -118,7 +118,7 @@ Copy
 Delete                      
 Empty                       
 Equals                      
-**FindFolders**
+FindFolders <---------
 FindItems                   
 GetHashCode                 
 GetLoadedPropertyDefinitions
@@ -155,7 +155,7 @@ $Inbox.FindItems.OverloadDefinitions -replace "(.+ )(.+\()(.+)",'$2$3' | foreach
 
 1 - FindItems(Microsoft.Exchange.WebServices.Data.SearchFilter searchFilter, Microsoft.Exchange.WebServices.Data.ItemView view)
 2 - FindItems(string queryString, Microsoft.Exchange.WebServices.Data.ItemView view)
-**3 - FindItems(Microsoft.Exchange.WebServices.Data.ItemView view)**
+3 - FindItems(Microsoft.Exchange.WebServices.Data.ItemView view) <----------
 4 - FindItems(Microsoft.Exchange.WebServices.Data.SearchFilter searchFilter, Microsoft.Exchange.WebServices.Data.ItemView view, Microsoft.Exchange.WebServices.Data.Grouping groupBy)
 5 - FindItems(string queryString, Microsoft.Exchange.WebServices.Data.ItemView view, Microsoft.Exchange.WebServices.Data.Grouping groupBy)
 6 - FindItems(Microsoft.Exchange.WebServices.Data.ItemView view, Microsoft.Exchange.WebServices.Data.Grouping groupBy)
@@ -174,8 +174,7 @@ So we need to find out what **'Microsoft.Exchange.WebServices.Data.ItemView'** i
 
 {% highlight powershell %}
 
-# Type this and it will give you all of it's available class methods
-# [Microsoft.Exchange.WebServices.Data.ItemView]::
+# Type this into an IDE and it will give you all of it's available class methods: '[Microsoft.Exchange.WebServices.Data.ItemView]::'
 # The only thing we can use here is the New() class method
 
 [Microsoft.Exchange.WebServices.Data.ItemView]::new

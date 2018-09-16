@@ -14,6 +14,27 @@ avatar: https://automativity.com/images/jekyll-logo.png
 #
 # Flags below are optional
 #
+collections:
+  books:
+    - title: Getting things done
+      author: David Allen
+    - title: The Power of habit
+      author: Charles Duhigg
+    - title: Deep Work
+      author: Cal Newport
+    - title: The One Thing
+      author: Gary Keller
+  blogs:
+    - name: Kevin Marquette
+      url: https://kevinmarquette.github.io
+    - name: Richard Siddaway
+      url: https://richardspowershellblog.wordpress.com
+  competence:
+    - Powershell
+    - Active directory
+    - C#
+    
+
 
 # Includes an icon in the footer for each username you enter
 footer-links:
