@@ -33,8 +33,6 @@ websites:
 {{ section.description }} 
 * [{{ section.url}}]({{ section.url}})
 
-<br />
-
 {% endfor %}
 
 ---
