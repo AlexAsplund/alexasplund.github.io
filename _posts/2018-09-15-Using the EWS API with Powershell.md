@@ -3,6 +3,8 @@ layout: post
 title: Using powershell to utilize the Exchange Web Services API
 tags: [Powershell, EWS, Exchange]
 ---
+I wanted to write a new guide to show you the thought process that I have when I'm exploring .net classes in Powershell.
+And something that most of you use is Exchange so I wrote a few lines on how to explore and use the EWS API.
 
 
 ## Downloading the EWS managed API
