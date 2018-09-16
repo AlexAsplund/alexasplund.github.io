@@ -39,10 +39,6 @@ resources:
 
 {% endfor %}
 
----
----
-
-    
 {% for section in resource.books %}
 ### Books
 
