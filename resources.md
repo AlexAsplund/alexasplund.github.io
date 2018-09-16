@@ -36,14 +36,16 @@ websites:
 <br />
 
 {% endfor %}
----  
+
+---
+
 ## Books
 {% for section in page.books %}
 
 
 #### {{ section.name }}
 
-Author: {{ section.description }}
+* Author: {{ section.description }}
 
 
 
