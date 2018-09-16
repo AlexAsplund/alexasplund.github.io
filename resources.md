@@ -16,15 +16,8 @@ resources:
 ---    
 
 {% for resource in page.resources %}
-<h3>{{ resource.name }}</h3>
-<ul>
-
+    <h3>{{ resource.name }}</h3>
     {% for section in resource.name %}
-
-    <li>{{ section.name }}</li>
-
+        <li>{{ section.name }}</li>
     {% endfor %}
-
-
-</ul>
 {% endfor %}
