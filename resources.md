@@ -39,6 +39,7 @@ resources:
 
 {% endfor %}
 
+===
 
 ### Books    
 {% for section in page.resources.books %}
