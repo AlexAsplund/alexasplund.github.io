@@ -30,23 +30,22 @@ websites:
 {% for section in page.websites %}
 #### {{ section.name }}
 
-{{ section.description }}
+{{ section.description }} 
+* [{{ section.url}}]({{ section.url}})
 
-[**Link**]({{ section.url}})
 
----  
 
 {% endfor %}
+---  
 ### Books
 {% for section in page.books %}
 
 
 #### {{ section.name }}
 
-{{ section.description }}
+Author: {{ section.description }}
 
-[**Link**]({{ section.url}})
 
----  
+
 
 {% endfor %}
