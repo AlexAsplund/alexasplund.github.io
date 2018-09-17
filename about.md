@@ -11,5 +11,5 @@ To get a better picture, check out my  [top books and important websites](/resou
 ### Contact me
 
 Twitter: alexasplund  
-Email: alex@automativity.com  
-Linkedin: [Link](https://www.linkedin.com/in/alex-asplund-54134156/)
+[Email](mailto:alex@automativity.com)
+[Linkedin](https://www.linkedin.com/in/alex-asplund-54134156/)
