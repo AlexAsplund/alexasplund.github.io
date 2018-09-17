@@ -253,6 +253,3 @@ New-TodoistProject -Name "Repair dishwasher"
 ### [Update-TodoistTask](https://github.com/AlexAsplund/PSTodoist/blob/master/docs/en-us/Update-TodoistTask.md)
 
     Update-TodoistTask -Id 1234 -Content "Put out forest fires" -DueString "In 2 years"
-
-****
-----

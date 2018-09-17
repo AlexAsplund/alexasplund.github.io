@@ -244,7 +244,3 @@ SYSTEM.SEARCH.RANK                  : 1000
 SYSTEM.SEARCH.STORE                 : file
 ```
 
-
-
-****
-----

@@ -195,7 +195,4 @@ So if your environment has a lot of important applications running in linux, esp
 
 From my experience, this is best suited at 10AM. People have arrived to work, are awake and ain't hungry.
 
-Also, do yourself a faviour and upgrade in a test forest with the most critical apps first.
-
-----
-****
+Also, do yourself a favour and upgrade in a test forest with the most critical apps first.

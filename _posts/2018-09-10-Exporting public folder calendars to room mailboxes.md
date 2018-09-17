@@ -61,7 +61,3 @@ There are some limitations to this script:
    * A theoretical workaround is to CC the cancellation to the resource mailaddress but i haven't tested this yet.
 * If an organizer don't have a mailbox anymore, the copy will fail.
 * Cancelling copied appointments with '[Microsoft.Exchange.WebServices.Data.DeleteMode]::HardDelete' in EWS will send a cancellation to all attendees... I noticed.
-
-
-****
-----

@@ -45,6 +45,3 @@ I use this for a lot of small stuff, like:
 
 What you want to use it for is up to you. But it can make those small tedious
 tasks simple or non-existent.
-
-****
-----
