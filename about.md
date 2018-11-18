@@ -10,7 +10,8 @@ To get a better picture, check out my  [top books and important websites](/resou
 
 ### Contact me
 
-Twitter: alexasplund  
+Twitter: alexasplund 
+ 
 [Email](mailto:alex@automativity.com)
 
 [Linkedin](https://www.linkedin.com/in/alex-asplund-54134156/)
