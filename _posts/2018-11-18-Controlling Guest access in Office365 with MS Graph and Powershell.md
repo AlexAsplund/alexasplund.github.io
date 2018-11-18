@@ -49,6 +49,7 @@ $settingsCopy["AllowToAddGuests"] = $True
 New-AzureADObjectSetting -TargetType Groups -TargetObjectId $GroupId -DirectorySetting $settingsCopy
 ```
 
+-----------
 
 
 This will be easy! I only need to create like 2 functions or something for managing this! Or so i thought...
@@ -68,6 +69,8 @@ The only solution I found was to do this the other way around. To set the direct
 
 First of, I needed to change the settings of the directory template to ```AllowToAddGuests=false```. I did this with the AzureADPreview Module but you can do this with pure Graph API if you want to.
 
+-----------
+
 ```Powershell
 # This allows guest access to all groups on the tenant
 Install-Module AzureADPreview -Force -AllowClobber
@@ -79,6 +82,8 @@ $template = Get-AzureADDirectorySettingTemplate | ? {$_.displayname -eq "group.u
 $settingsCopy = Get-AzureADDirectorySetting -Id $settingsObjectID
 $settingsCopy["AllowGuestsToAccessGroups"] = "false"
 ```
+
+-----------
 
 
 ## Group Object settings
@@ -113,6 +118,7 @@ Available commands:
 First of, you need to set the ```AllowToAddGuests=false``` on all groups that you don't want to enable guest invite on.
 In my case this was easy, it was all groups except two:
 
+-----------
 
 ```Powershell
 Import-Module MyAAD
@@ -136,6 +142,7 @@ $SharedUnifiedGroups = @(
 $UnifiedGroups | ? {$_.Id -in $SharedUnifiedGroups} | Set-MyAADGroupGuestAccess -AllowToAddGuests $True -Force
 ```
 
+-----------
 
 ## The scheduled scripts
 
@@ -144,6 +151,7 @@ $UnifiedGroups | ? {$_.Id -in $SharedUnifiedGroups} | Set-MyAADGroupGuestAccess 
 This will need to be scheduled somewhere, I'm running this in Jenkins so that I can manage secrets and monitor easily.
 Also, it only collects the groups that were created within the last 48 hours. Others might do with selecting every group every run(2nd script) but since we have almost 2000 groups It's a lot easier this way and the risk of getting throttled is smaller.
 
+-----------
 
 ```Powershell    
 # Get the credential into a credential object in your preferred secure way.
@@ -163,11 +171,14 @@ $NoObjectSetting = $UnifiedGroupsSettings | Where-Object {$_.Value.id -eq $null}
 $NoObjectSetting | Set-MyAADGroupGuestAccess -AllowToAddGuests $false -AccessToken $AccessToken
 ```
 
+-----------
 
 ### Second script for enforcing it on missed groups etc.
 
 This one takes a lot longer but  should be run hourly or daily IMO.
 It's like the first script but it takes all groups including old ones.
+
+-----------
 
 ```Powershell
 # Get the credential into a credential object in your preferred secure way.
@@ -184,14 +195,19 @@ $NoObjectSetting = $UnifiedGroupsSettings | Where-Object {$_.Value.id -eq $null}
 $NoObjectSetting | Set-MyAADGroupGuestAccess -AllowToAddGuests $false  -AccessToken $AccessToken
 ```
 
+-----------
 
 ## Allowing guest invite for a room
 This is easy, get the GUID of the group you want to set and:
+
+-----------
 
 ```Powershell
 # Force will delete old setting and replace with new.
 Set-MyAADGroupGuestAccess -Id '755a9096-0eb1-4063-b1be-be0792a09997' -AllowToAddGuests $false -AccessToken $AccessToken -Force
 ```
+
+-----------
 
 # Conclusion
 
