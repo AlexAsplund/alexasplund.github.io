@@ -108,7 +108,8 @@ Available commands:
 ## First run
 
 First of, you need to set the ```AllowToAddGuests=false``` on all groups that you don't want to enable guest invite on.
-In my case this was easy, it was all groups except one:
+In my case this was easy, it was all groups except two:
+
 
 ```Powershell
 Import-Module MyAAD
