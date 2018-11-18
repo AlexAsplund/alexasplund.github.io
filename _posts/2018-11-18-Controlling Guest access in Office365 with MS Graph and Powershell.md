@@ -23,6 +23,7 @@ I successfully tried this for enabling guest access on all groups in a test tena
 [This script is stolen from the documentation.](https://docs.microsoft.com/en-us/office365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide)
 
 
+-----------
 
 ```Powershell
 # This denies guest access to all groups on the tenant
