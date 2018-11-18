@@ -132,8 +132,10 @@ $AccessToken = $AccessTokenResponse.access_token
 
 # Fetch Unified Groups
 $UnifiedGroups = Get-MyAADUnifiedGroups -AccessToken $AccessToken
+
 # Set guest access to false on all groups
 $UnifiedGroups | Set-MyAADGroupGuestAccess -AllowToAddGuests $False #-Force (if you want to clear all existing settings on the group)
+
 # Set guest access to true on some groups
 $SharedUnifiedGroups = @(
     '755a9096-0eb1-4063-b1be-be0792a09997',
@@ -162,10 +164,13 @@ $CreatedAfter = (get-date).AddHours(-48)
 # Get Access Token
 $AccessTokenResponse = Get-MyAADAccessToken -ClientCredential $ClientCredential -TenantName contoso.onmicrosoft.com
 $AccessToken = $AccessTokenResponse.access_token
+
 # Get all groups
 $UnifiedGroups = Get-MyAADUnifiedGroups -AccessToken $AccessToken | ? {[datetime]$_.createdDateTime -gt $CreatedAfter}
+
 # Get all group settings
 $UnifiedGroupsSettings = $UnifiedGroups | Get-MyAADGroupSetting -AccessToken $AccessToken 
+
 # Get all groups without settings applied and apply settings
 $NoObjectSetting = $UnifiedGroupsSettings | Where-Object {$_.Value.id -eq $null}
 $NoObjectSetting | Set-MyAADGroupGuestAccess -AllowToAddGuests $false -AccessToken $AccessToken
@@ -183,13 +188,17 @@ It's like the first script but it takes all groups including old ones.
 ```Powershell
 # Get the credential into a credential object in your preferred secure way.
 
+
 # Get Access Token
 $AccessTokenResponse = Get-MyAADAccessToken -ClientCredential $ClientCredential -TenantName contoso.onmicrosoft.com
 $AccessToken = $AccessTokenResponse.access_token
+
 # Get all groups
 $UnifiedGroups = Get-MyAADUnifiedGroups -AccessToken $AccessToken
+
 # Get all group settings
 $UnifiedGroupsSettings = $UnifiedGroups | Get-MyAADGroupSetting -AccessToken $AccessToken 
+
 # Get all groups without settings applied and apply settings
 $NoObjectSetting = $UnifiedGroupsSettings | Where-Object {$_.Value.id -eq $null}
 $NoObjectSetting | Set-MyAADGroupGuestAccess -AllowToAddGuests $false  -AccessToken $AccessToken
