@@ -155,7 +155,7 @@ $UnifiedGroups = Get-MyAADUnifiedGroups -AccessToken $AccessToken | ? {[datetime
 $UnifiedGroupsSettings = $UnifiedGroups | Get-MyAADGroupSetting -AccessToken $AccessToken 
 # Get all groups without settings applied and apply settings
 $NoObjectSetting = $UnifiedGroupsSettings | Where-Object {$_.Value.id -eq $null}
-$NoObjectSetting | Set-MyAADGroupGuestAccess -AllowToAddGuests $true  -AccessToken $AccessToken
+$NoObjectSetting | Set-MyAADGroupGuestAccess -AllowToAddGuests $false -AccessToken $AccessToken
 ```
 
 
@@ -176,5 +176,21 @@ $UnifiedGroups = Get-MyAADUnifiedGroups -AccessToken $AccessToken
 $UnifiedGroupsSettings = $UnifiedGroups | Get-MyAADGroupSetting -AccessToken $AccessToken 
 # Get all groups without settings applied and apply settings
 $NoObjectSetting = $UnifiedGroupsSettings | Where-Object {$_.Value.id -eq $null}
-$NoObjectSetting | Set-MyAADGroupGuestAccess -AllowToAddGuests $true  -AccessToken $AccessToken
+$NoObjectSetting | Set-MyAADGroupGuestAccess -AllowToAddGuests $false  -AccessToken $AccessToken
 ```
+
+
+## Allowing guest invite on a room
+This is easy, get the GUID of the group you want to set and:
+
+```Powershell
+# Force will delete old setting and replace with new.
+Set-MyAADGroupGuestAccess -Id '755a9096-0eb1-4063-b1be-be0792a09997' -AllowToAddGuests $false -AccessToken $AccessToken -Force
+```
+
+# Conclusion
+
+It took many hours more than expected and I will never assume something is straight forward again until next week. Also, this was a great learning experience for using Microsoft Graph, that seems to become a must if you want to deliver value to your organization.
+
+
+This is also not the most secure way to do it, since a group can be created and guests can be invited during a short span of time, depending on how often script 1 runs. But for many, this is enough. I'm thinking about creating a script that removes guests from groups that don't have Guest invitation enabled, but that's for later.
