@@ -1,16 +1,17 @@
 ---
 layout: post
 title: Controlling Guest access to Office365 with MS Graph and Powershell
-tags: [Microsoft Graph, Powershell, Modules, MyAAD, Microsoft Teams, Unified Groups]
+tags: [Microsoft Graph, Powershell, Modules, MyAAD, Microsoft Teams, Unified Groups, Azure Active Directory]
 ---
 
-You know when you read documentation about a task or problem you need to solve and you think 'thats easy!'... But you find yourself scratching yourself in the head 6 hours later? Sounds like the average IT-task right?
+You know when you read documentation about a task or problem you need to solve and you think 'Thats easy!'. But you find yourself scratching yourself in the head 6 hours later... Sounds like the average IT-task right?
 
 
 This time the problem that needed solving was that our organization needed to start allowing guest access to a handfull of teams/unified groups.
 
 I started of by allowing guest access globaly on the tenant and restricting guest access to sharepoint sites, allowing guests to teams etc but quickly found out that this isn't working as i thought it would.
 
+[Github link to MyAAD module](https://github.com/AlexAsplund/MyAAD)
 
 # The solution that didn't work
 
@@ -19,7 +20,8 @@ I successfully tried this for enabling guest access on all groups in a test tena
 
 # The solution I thought would work
 
-[Stolen from](https://docs.microsoft.com/en-us/office365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide)
+[This script is stolen from the documentation.](https://docs.microsoft.com/en-us/office365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide)
+
 
 
 ```Powershell
@@ -194,5 +196,6 @@ Set-MyAADGroupGuestAccess -Id '755a9096-0eb1-4063-b1be-be0792a09997' -AllowToAdd
 
 It took many hours more than expected and I will never assume something is straight forward again until next week. Also, this was a great learning experience for using Microsoft Graph, that seems to become a must if you want to deliver value to your organization.
 
+Also, after getting to know Microsoft Graph a bit more it's become easier to use raw ```Invoke-RestMethod``` commands instead of relying on ADAL or other heavier moules.
 
 This is also not the most secure way to do it, since a group can be created and guests can be invited during a short span of time, depending on how often script 1 runs. But for many, this is enough. I'm thinking about creating a script that removes guests from groups that don't have Guest invitation enabled, but that's for later.
