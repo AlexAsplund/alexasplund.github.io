@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Controlling Guest access to Office365 with MS Graph and Powershell
+title: Controlling Guest access in Office365 with MS Graph and Powershell
 tags: [Microsoft Graph, Powershell, Modules, MyAAD, Microsoft Teams, Unified Groups, Azure Active Directory]
 ---
 
@@ -18,7 +18,7 @@ I started of by allowing guest access globaly on the tenant and restricting gues
 I thought that I could set a policy to deny guest access to all groups and apply specific Object settings to the groups that would need guest access.
 I successfully tried this for enabling guest access on all groups in a test tenant and restricting it for a few with object settings, so this should be no problem right?
 
-# The solution I thought would work
+## The solution I thought would work
 
 [This script is stolen from the documentation.](https://docs.microsoft.com/en-us/office365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide)
 
