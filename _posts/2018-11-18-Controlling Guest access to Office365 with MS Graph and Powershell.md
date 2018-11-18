@@ -139,6 +139,7 @@ $UnifiedGroups | ? {$_.Id -in $SharedUnifiedGroups} | Set-MyAADGroupGuestAccess 
 ### The first script for configuring newly created groups
 
 This will need to be scheduled somewhere, I'm running this in Jenkins so that I can manage secrets and monitor easily.
+Also, it only collects the groups that were created within the last 48 hours. Others might do with selecting every group every run(2nd script) but since we have almost 2000 groups It's a lot easier this way and the risk of getting throttled is smaller.
 
 
 ```Powershell    
@@ -181,7 +182,7 @@ $NoObjectSetting | Set-MyAADGroupGuestAccess -AllowToAddGuests $false  -AccessTo
 ```
 
 
-## Allowing guest invite on a room
+## Allowing guest invite for a room
 This is easy, get the GUID of the group you want to set and:
 
 ```Powershell
