@@ -62,7 +62,7 @@ The function below is about 1ms faster (0.3ms avg) than the other methods I've t
         }).Value
     }
 
-Example how to use it:
+Example on how to use it:
 
     $User = Get-ADUser -Identity johndoe -Properties UserAccountControl
     Get-UACProperties $User.UserAccountControl
