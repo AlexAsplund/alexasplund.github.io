@@ -6,10 +6,15 @@ tags: [Active Directory, UserAccountControl, PowerShell]
 
 It's been a while since my last post on this blog, but this is a quick one that might make your scripts run a bit faster if you want to fetch the UserAccountControl flags for multiple users (especially if you have thousands of users in AD).
 
-For those of you who don't know: [UserAccountControl](https://support.microsoft.com/en-us/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties) is a value in AD that defines if the user don't requires a password or if password never expires for the user and a whole bunch of other stuff that's important to keep track of. It's a 32bit (4 byte) value that defines a bunch of options for a user account in AD depending on what bits that are set.
+For those of you who don't know: [UserAccountControl](https://support.microsoft.com/en-us/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties) is a 32bit (4 byte) AD attribute that defines a bunch of options for a user account in AD depending on what bits that are set. A few examples are *DONT_EXPIRE_PASSWORD*, *PASSWD_CANT_CHANGE*. 
 
-The function below is at least 1ms faster (0.3ms avg) than the other methods I've tried so far. 
+Each property is tied to one of the bits in the 32bit value. So if bit #5 (counting from zero) is set to true then the user don't need a password to log in, if bit #16 is set to true then the users password never expires and so on.
+
+The ActiveDirectory module from RSAT abstracts this and makes it easier for us but it adds compute time if you want to run things fast. And since I avoid using the ActiveDirectory module since I want to use this in a REST API later on.
+
+The function below is at least 1ms faster (0.3ms avg) for me than the other methods I've tried so far. 
 That saves me around 25-30 seconds for an AD audit run and will come in handy when I convert it to a C# version for the REST API that my Graylog [Lookup Tables](https://docs.graylog.org/en/3.1/pages/lookuptables.html) use.
+
 ``` powershell
     # If Bit -eq <int> then UAC has the corresponding value
     # Set the hash outside of the function to save time
