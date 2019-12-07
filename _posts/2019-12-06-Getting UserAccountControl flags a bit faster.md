@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Getting UserAccountControl flags in AD a bit faster"
+title: "Getting UserAccountControl flags in AD (A bit faster)"
 tags: [Active Directory, UserAccountControl, PowerShell]
 ---
 
