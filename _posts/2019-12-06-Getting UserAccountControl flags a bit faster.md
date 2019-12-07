@@ -10,7 +10,7 @@ For those of you who don't know: [UserAccountControl](https://support.microsoft.
 
 The function below is at least 1ms faster (0.3ms avg) than the other methods I've tried so far. 
 That saves me around 25-30 seconds for an AD audit run and will come in handy when I convert it to a C# version for the REST API that my Graylog [Lookup Tables](https://docs.graylog.org/en/3.1/pages/lookuptables.html) use.
-
+``` powershell
     # If Bit -eq <int> then UAC has the corresponding value
     # Set the hash outside of the function to save time
     $UserAccountControlHash = @{
@@ -57,17 +57,21 @@ That saves me around 25-30 seconds for an AD audit run and will come in handy wh
             $BitArray[$_.Name]
         }).Value
     }
-
+```
 Example on how to use it:
 
+``` powershell
     $User = Get-ADUser -Identity johndoe -Properties UserAccountControl
     Get-UACProperties $User.UserAccountControl
+```
 
 And to get average the execution time:
 
+``` powershell
     $Rand = 1..867200 |  Get-Random -Count 100
     $Rand | Foreach {
         Measure-Command -Expression {
             Get-UACProperties -UACValue $_
         }
     } | Measure -Property TotalMilliseconds -Average | Select -ExpandProperty Average
+```
