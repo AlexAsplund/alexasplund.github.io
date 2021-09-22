@@ -4,7 +4,7 @@ title: "Vanchor - An Open Source Trolling Motor"
 tags: [Raspberry, Trolling Motor, Fishing, Hardware Hacking, Arduino]
 ---
 
-My latest project: Vanchor
+My latest project: Vanchor (Virtual Anchor)
 
 Vanchor is an Open Source trolling motor for smaller boats. It's created with a goal to be cheap and easily modifiable to fit your needs. The total cost of the project including a cheap trolling motor is around $300.
 
